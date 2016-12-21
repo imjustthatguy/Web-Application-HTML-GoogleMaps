@@ -1,0 +1,48 @@
+#map{
+	float: left;
+	top: 1em;
+	width: 700px;
+	background-color: none;
+	height: 400px;
+}
+#Delete{
+	color: black;
+	background-color: red;
+}
+h1, h2, h3{
+	color: brown;
+	font-family: "Lucida Console", Monaco, monospace;
+	text-decoration: underline;
+}
+table, td, th, tr{
+	border: 1px solid black;
+}
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: beige;
+}
+table{
+	background-color:#AAC4D1;
+}
+button{
+	margin: 1px;
+	background-color: lightgrey;
+}
+p{
+	color: darkgreen;
+}
+a{
+	color: black;
+}
+.row:hover{
+	background-color: grey;
+	cursor: pointer;
+}
+button:hover{
+	color: darkblue;
+}
+a:hover{
+	text-decoration: none;
+}
+

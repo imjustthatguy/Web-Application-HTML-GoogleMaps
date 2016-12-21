@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+      <meta name = "viewport" content = "width=device-width, initial-scale=1">
+      <link href = "stylesheets/bootstrap.min.css" rel = "stylesheet">
+      <link href = "stylesheets/style.css", rel = "stylesheet", type = "text/css">
+    </head>
+	<body>
+		<h1> Thank you! </h1>
+		<p> <b> Contact Information Submitted to our database </b> </p>
+		<div>
+		<p> <b> Name: <%=title%> <%= first%> <%= last%> </b> </p>
+		<p> <b> Address: <%= street%>, <%= city%>, <%= state%>, <%=zip%> </b> </p>
+		<p> <b> Contact by Phone: <%= phone%>  </b> </p>
+		<p> <b> Contact by Mail: <%=contact%> </b> </p>
+		<p> <b> Contact by Email: <a href="mailto:<%= email%>"> <%=email%> </a> </b> </p>
+		</div>
+
+		<button>
+			<a href ="/contacts"> Contacts </a>
+		</button>
+		<br>
+		<button> 
+			<a href ="/start"> Submit another contact...</a>
+		</button>
+		
+	</body>
+</HTML>

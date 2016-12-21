@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <link href = "stylesheets/bootstrap.min.css" rel = "stylesheet">
+    <link href = "stylesheets/style.css", rel = "stylesheet", type = "text/css">
+    <title>Webpage</title>
+    <p> Welcome - Insert your information to our database </p>
+ </head>
+
+  <body>
+      <form action="mailer" method="post">
+          <div>
+            <input type="radio" name="title" value="Mr." checked> Mr.
+            <input type="radio" name="title" value="Mrs."> Mrs.
+            <input type="radio" name="title" value="Ms."> Ms.
+            <input type="radio" name="title" value="Dr."> Dr.
+          </div>
+          <br>
+          <div>
+              <label for="first">First Name: </label>
+              <input type="text" name="first" id="first" required/>
+              <label for="last">Last Name: </label>
+              <input type="text" name="last" id="last" required/>
+          </div>
+          <br>
+          <div>
+              <label for="street">Street: </label>
+              <input type="text" name="street" id="street"/>
+              <label for="city">City: </label>
+              <input type="text" name="city" id="city"/>
+          </div>
+          <br>
+          <div>
+            <label for="state">State</label>
+            <select name="state">
+              <option value="NJ">NJ</option>
+              <option value="NY">NY</option>
+              <option value="PA">PA</option>
+              <option value="CT">CT</option>
+            </select>
+
+            <label for="zip">Zip: </label>
+            <input type="text" name="zip" id="zip"/>
+
+          </div>
+          <br>
+          <div>
+              <label for="phone">Phone: </label>
+              <input type="text" name="phone" id="phone"/>
+          </div>
+          <br>
+          <div>
+              <label for="email">Email: </label>
+              <input type="text" name="email" id="email"/>
+          </div>
+
+          <div required>
+            <label for="phone">Phone</label>
+            <input type="checkbox" name="contact" value="Phone"/>
+            <label for="phone">Mail</label>
+            <input type="checkbox" name="contact" value="Mail"/>
+            <label for="phone">Email</label>
+            <input type="checkbox" name="contact" value="Email"/>
+            <label for="phone">Any</label>
+            <input type="checkbox" name="contact" value="Any" checked= "checked"/>
+          </div>
+
+          <div>
+            <button type="submit">Save</button>
+          </div>
+
+      </form>
+
+      <button>
+      <a href = '/contacts'> Contacts Table </a>
+      </button>
+  </body>
+
+</html>

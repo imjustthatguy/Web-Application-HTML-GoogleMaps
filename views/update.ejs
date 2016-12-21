@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <h3> Update <%=collection[0].first%> </h3>
+
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <link href = "stylesheets/bootstrap.min.css" rel = "stylesheet">
+    <link href = "stylesheets/style.css", rel = "stylesheet", type = "text/css">
+    <script src = "http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <title>Update</title>
+ </head>
+  <body>
+    <form action="update" method="post">
+        <div>
+          <input type="radio" name="title" value="Mr." <%=collection[0].title == "Mr." ? "checked" : "" %>> Mr.
+          <input type="radio" name="title" value="Mrs."<%=collection[0].title == "Mrs." ? "checked" : "" %>> Mrs.
+          <input type="radio" name="title" value="Ms." <%=collection[0].title == "Ms." ? "checked" : "" %>> Ms.
+          <input type="radio" name="title" value="Dr." <%=collection[0].title == "Dr." ? "checked" : "" %>> Dr.
+        </div>
+        <br>
+
+        <div>
+            <label for="first">First Name: </label>
+            <input type="text" name="first" id="first" value = "<%=collection[0].first%>"required/>
+            <label for="last">Last Name: </label>
+            <input type="text" name="last" id="last" value = "<%=collection[0].last%>" required/>
+        </div>
+        <br>
+
+        <div>
+            <label for="street">Street: </label>
+            <input type="text" name="street" id="street" value = "<%=collection[0].street%>"/>
+            <label for="city">City: </label>
+            <input type="text" name="city" id="city" value = "<%=collection[0].city%>" />
+        </div>
+        <br>
+
+        <div>
+          <label for="state">State</label>
+          <select name="state">
+            <option value="NJ" <%=collection[0].state == "NJ" ? "selected" : "" %>>NJ</option>
+            <option value="NY" <%=collection[0].state == "NY" ? "selected" : "" %>>NY</option>
+            <option value="PA" <%=collection[0].state == "PA" ? "selected" : "" %>>PA</option>
+            <option value="CT" <%=collection[0].state == "CT" ? "selected" : "" %>>CT</option>
+          </select>
+
+          <label for="zip">Zip: </label>
+          <input type="text" name="zip" id="zip" value = "<%=collection[0].zip%>" />
+
+        </div>
+        <br>
+
+        <div>
+            <label for="phone">Phone: </label>
+            <input type="text" name="phone" id="phone" value = "<%=collection[0].phone%>" />
+        </div>
+        <br>
+
+        <div>
+            <label for="email">Email: </label>
+            <input type="text" name="email" id="email" value = "<%=collection[0].email%>" />
+        </div>
+
+        <div>
+
+          <label for="phone">Phone</label>
+          <input type="checkbox" id = "phone_check" name="contact" value="Phone"/>
+
+          <label for="phone">Mail</label>
+          <input type="checkbox" id = "mail_check" name="contact" value="Mail"/>
+
+          <label for="phone">Email</label>
+          <input type="checkbox" id = "email_check" name="contact" value="Email"/>
+
+          <label for="phone">Any</label>
+          <input type="checkbox" id = "any_check" name="contact" value="Any"/>
+          
+            <%for(var i = 0; i < collection[0].contact.length; i++){%>
+              <%if(collection[0].contact[i] === "Phone" || collection[0].contact[i] === "P"){%>
+                <script>
+                  $("#phone_check").prop("checked", true);
+                </script>
+              <%}%>
+
+              <%if(collection[0].contact[i] === "Mail" || collection[0].contact[i] === "M"){%>
+                <script>
+                  $("#mail_check").prop("checked", true);
+                </script>
+              <%}%>
+
+              <%if(collection[0].contact[i] === "Email" || collection[0].contact[i] === "E"){%>
+                <script>
+                  $("#email_check").prop("checked", true);
+                </script>        
+              <%}%>
+
+              <%if(collection[0].contact[i] === "Any" || collection[0].contact[i] === "A"){%>
+                <script>
+                  $("#any_check").prop("checked", true);
+                </script>
+              <%}%>
+
+            <%}%>
+        </div>
+
+        <div>
+          <input type = "hidden" id = "_id" name = "_id" value = <%=collection[0]._id%>> </label>
+          <input type = "hidden" id = "lat" name = "lat" value = <%=collection[0].lat%>> </label> 
+          <input type = "hidden" id = "lng" name = "lng" value = <%=collection[0].lng%>> </label>  
+        </div>
+
+        <div>
+          <button type="submit">Update</button>
+
+          <button>
+            <a href = "contacts"> Go back</a>
+          </button>
+        </div>
+  
+    </form>
+  </body>
+
+</html>

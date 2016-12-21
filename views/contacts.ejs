@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Contacts</title>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <link href = "stylesheets/bootstrap.min.css" rel = "stylesheet">
+    <link href = "stylesheets/style.css", rel = "stylesheet", type = "text/css">
+
+		<script src = "http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBctxFcG6gnLS7TcsT_lt_-Jzbp2niZsJQ&callback=initMap"
+    	defer>
+    </script>
+    <script type = "text/javascript" src = "javascripts/contacts.js"></script>
+
+    	
+	</head>
+		<body>
+      <section id = "start_page">
+  			<table>
+  				<caption> Contacts </caption>
+  				<thead>
+  					<tr>
+              <th></th>
+  						<th>Title</th>
+  						<th>First</th>
+  						<th>Last</th>
+  						<th>Street</th>
+  						<th>City</th>
+  						<th>State</th>
+  						<th>Zip</th>
+  						<th>Phone</th>
+  						<th>Email</th>
+  						<th>Contact</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th></th>
+              <th></th>
+  					</tr>
+  				</thead>
+
+  				<tbody>
+  					<%for(var i = 0; i < collection.length;i++){%>
+  						<tr class = 'row'>
+  							<td> <%=collection[i].title%> </td>
+  							<td id = 'first' value = <%=collection[i].first%>> <%=collection[i].first%> </td>
+  							<td id = 'last' value = <%=collection[i].last%> > <%=collection[i].last%> </td>
+  							<td> <%=collection[i].street%> </td>
+  							<td> <%=collection[i].city%> </td>
+  							<td> <%=collection[i].state%> </td>
+  							<td> <%=collection[i].zip%> </td>
+  							<td> <%=collection[i].phone%> </td>
+  							<td> <%=collection[i].email%> </td>
+                <td> <%=collection[i].contact%> </td>
+  							<td id = 'lat'> <%=collection[i].lat%> </td>
+  							<td id = 'lng'> <%=collection[i].lng%> </td>
+                <td> <button> <a href = "update?_id=<%=collection[i]._id%>" value = "<%=collection[i]._id%>"> Update  </a> </button> </td>
+  							<td> <button type = "button" onClick = "refreshPage()" id = "Delete" name = "Delete" value = <%=collection[i]._id%>> Delete </button> </td>
+  						</tr> 
+
+  					<%}%>
+  				</tbody>
+        </table>
+
+				<button> 
+          <a href = "/start"> Create a contact </a> 
+        </button>
+
+        <button>
+          <a href = "/contacts"> Redisplay all contacts </a>
+        </button>
+
+        <button> 
+          <a href = "/logout"> Logout </a>
+        </button>
+
+        <div>
+            <label for = "search"> Search by first/last name: </label>
+            <input type = "textbox" id = "search" name = "firstsearch" vsize="20"/>
+            <input type = "textbox" id = "search" name = "lastsearch" size="20" />
+        </div>
+
+        <div id = "address_search">
+          <form action = "search" method = "post"> 
+            <label for "address"> Search by address: </label>
+            <input type = "textbox" id = "address" name = "address" size="38" />
+            <label for "radius"> Radius: </label>
+            <select name = "radius">
+              <option value = "5"> 5 miles</option>
+              <option value = "10"> 10 miles</option>
+              <option value = "25"> 25 miles</option>
+            </select>
+            <button type = "submit"> Search </button>
+          </form>
+        </div>
+
+        <div hidden id = "initcoor">
+          <label class = "coorlat"> <%=coordinates.lat%> </label>
+          <label class = "coorlng"> <%=coordinates.lng%> </label>
+        </div>
+
+  			<div id = "map">
+
+  			</div>
+      </section>
+		</body>
+</html>

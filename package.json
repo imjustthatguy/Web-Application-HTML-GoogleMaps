@@ -1,0 +1,27 @@
+{
+  "name": "finalproject",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "static-favicon" : "*",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.5.2",
+    "express": "~4.14.0",
+    "express-session" : "*",
+    "method-override" : "*",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0",
+    "node-geocoder" : "*",
+    "passport" : "*",
+    "passport-local" : "*",
+    "connect-flash" : "*",
+    "bcrypt" : "*",
+    "jquery" : "*",
+    "bootstrap": "*"
+  }
+}
