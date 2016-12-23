@@ -18,6 +18,37 @@
 	</head>
 		<body>
       <section id = "start_page">
+        <button> 
+          <a href = "/start"> Create a contact </a> 
+        </button>
+
+        <button>
+          <a href = "/contacts"> Redisplay all contacts </a>
+        </button>
+
+        <button> 
+          <a href = "/logout"> Logout </a>
+        </button>
+
+        <div>
+            <label for = "search"> Search by first/last name: </label>
+            <input type = "textbox" id = "search" name = "firstsearch" vsize="20"/>
+            <input type = "textbox" id = "search" name = "lastsearch" size="20" />
+        </div>
+
+        <div id = "address_search">
+          <form action = "search" method = "post"> 
+            <label for "address"> Search by address: </label>
+            <input type = "textbox" id = "address" name = "address" size="38" />
+            <label for "radius"> Radius: </label>
+            <select name = "radius">
+              <option value = "5"> 5 miles</option>
+              <option value = "10"> 10 miles</option>
+              <option value = "25"> 25 miles</option>
+            </select>
+            <button type = "submit"> Search </button>
+          </form>
+        </div>
   			<table>
   				<caption> Contacts </caption>
   				<thead>
@@ -62,38 +93,6 @@
   					<%}%>
   				</tbody>
         </table>
-
-				<button> 
-          <a href = "/start"> Create a contact </a> 
-        </button>
-
-        <button>
-          <a href = "/contacts"> Redisplay all contacts </a>
-        </button>
-
-        <button> 
-          <a href = "/logout"> Logout </a>
-        </button>
-
-        <div>
-            <label for = "search"> Search by first/last name: </label>
-            <input type = "textbox" id = "search" name = "firstsearch" vsize="20"/>
-            <input type = "textbox" id = "search" name = "lastsearch" size="20" />
-        </div>
-
-        <div id = "address_search">
-          <form action = "search" method = "post"> 
-            <label for "address"> Search by address: </label>
-            <input type = "textbox" id = "address" name = "address" size="38" />
-            <label for "radius"> Radius: </label>
-            <select name = "radius">
-              <option value = "5"> 5 miles</option>
-              <option value = "10"> 10 miles</option>
-              <option value = "25"> 25 miles</option>
-            </select>
-            <button type = "submit"> Search </button>
-          </form>
-        </div>
 
         <div hidden id = "initcoor">
           <label class = "coorlat"> <%=coordinates.lat%> </label>

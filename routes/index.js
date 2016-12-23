@@ -17,7 +17,7 @@ var options = {
 	formatter: null
 };
 var geocoder = NodeGeocoder(options);
-MongoClient.connect(url, function(err, db){
+MongoClient.connect(process.env.MONGOLAB_URI, {}, function(err, db){
 	if(err){
 		console.log("Connection to Mongo failed");
 		console.log(err);
@@ -85,7 +85,6 @@ router.post('/mailer', function(req, res, next){
 
 	var address = data.street + " " + data.city + " " 
 	+ data.state + " " + data.zip;
-
 	geocoder.geocode(address, function(err, res){
 		data.lat = res[0].latitude;
 		data.lng = res[0].longitude;
@@ -153,6 +152,7 @@ router.post('/update', ensureLoggedin, function(req, res, next){
     geocoder.geocode(address, function(err, res){
         data.lat = res[0].latitude;
         data.lng = res[0].longitude;
+
         collection.update(id,data);
 
     });
