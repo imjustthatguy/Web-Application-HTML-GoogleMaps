@@ -17,7 +17,7 @@ var options = {
 	formatter: null
 };
 var geocoder = NodeGeocoder(options);
-MongoClient.connect(process.env.MONGOLAB_URI, {}, function(err, db){
+MongoClient.connect(url, function(err, db){
 	if(err){
 		console.log("Connection to Mongo failed");
 		console.log(err);
