@@ -1,3 +1,5 @@
+//The username and password to enter the contact list is "cmps369" with the password simply "password"
+
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
